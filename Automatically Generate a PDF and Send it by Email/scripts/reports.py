@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 
-from reportlab.platypus import SimpleDoctTemplate
+from reportlab.platypus import SimpleDocTemplate
 from reportlab.platypus import Paragraph, Spacer, Table, Image
 from reportlab.lib.styles import getSampleStyleSheet
 from reportlab.lib import colors
 
 def generate(filename, title, additional_info, table_data):
     styles = getSampleStyleSheet()
-    report = SimpleDoctTemplate(filename)
+    report = SimpleDocTemplate(filename)
     report_title = Paragraph(title, styles["h1"])
     report_info = Paragraph(additional_info, styles["BodyText"])
     table_style = [('GRID',(0,0), (-1,-1), 1, colors.black),
